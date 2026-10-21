@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>join the girl code waitlist</title>
+<meta name="description" content="become a founding girl: lock in £15 a month, get first dibs on meet-ups and retreats, and a say in what we build.">
+<meta property="og:title" content="join the girl code waitlist">
+<meta property="og:description" content="become a founding girl: lock in £15 a month, get first dibs on meet-ups and retreats, and a say in what we build.">
+<meta property="og:image" content="https://joingirlcode.com/images/share.jpg">
+<meta property="og:url" content="https://joingirlcode.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__logo" href="index.html"><img src="images/logo-red.png" alt="girl code home" width="150" height="48"></a>
+    <ul class="nav__links">
+      <li><a href="about.html">about</a></li>
+      <li><a href="events.html">events</a></li>
+      <li><a href="join.html">join</a></li>
+      <li><a class="btn btn--small" href="waitlist.html" style="color:var(--blush)">join the waitlist</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+
+<section class="wl">
+  <div class="wrap">
+    <div class="wl__copy wl__intro">
+      <span class="tag tag--red" style="align-self:flex-start">founding spots are limited</span>
+      <h1>find your <em>girls.</em></h1>
+      <p class="lede"><em>girl code</em> is the group chat you wish you had: small meet-ups, monthly online sessions, real conversations and retreats with women who get it.</p>
+    </div>
+    <div class="wl__copy wl__perks">
+      <h2 class="wl__h2">join the <em>founding girls.</em></h2>
+      <ol class="perks">
+        <li><span>🍒</span><div><strong>a founding price, locked in for life.</strong> £15 a month. less than one reformer class.</div></li>
+        <li><span>🍒</span><div><strong>a say in what we build.</strong> from the online sessions to the very first meet-ups.</div></li>
+        <li><span>🍒</span><div><strong>first dibs on spots.</strong> meet-ups and retreats open to you before anyone else.</div></li>
+        <li><span>🍒</span><div><strong>an invite to our first women's circle.</strong> online, before the doors open to everyone. pyjamas encouraged.</div></li>
+      </ol>
+    </div>
+
+    <div class="wl__card" id="signup">
+      <form id="wl-form" novalidate>
+        <span class="sticker wl__sticker">free to join 🍒</span>
+        <h3>get on the <em>list.</em></h3>
+        <p class="muted" style="margin:0 0 22px">no spam. just launch news, events and the odd extra.</p>
+        <label class="field">
+          <span>your email</span>
+          <input type="email" name="fields[email]" placeholder="you@email.com" autocomplete="email" required>
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>yes, send me waitlist updates, launch news, events and occasional extras. i can unsubscribe anytime.</span>
+        </label>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn wl__btn" type="submit">i'm in</button>
+        <p class="wl__err" id="wl-err" role="alert"></p>
+      </form>
+      <div class="wl__done" id="wl-done" hidden>
+        <img src="images/g-sticker.png" alt="" width="90">
+        <h3>you're <em>in, love.</em></h3>
+        <p>check your inbox. your first email is on its way, and you get first say on our very first meet-up.</p>
+        <a class="btn btn--light btn--small" href="https://www.instagram.com/joingirlcode/" target="_blank" rel="noopener">follow @joingirlcode</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>making friends as an adult is <em>f*cking hard.</em></h2>
+    <p>so we made it easier. no small talk, no cliques, no matching sets required.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var f=document.getElementById('wl-form'), err=document.getElementById('wl-err'), done=document.getElementById('wl-done');
+  var url='https://assets.mailerlite.com/jsonp/2694090/forms/201974231789995041/subscribe';
+  fetch('https://assets.mailerlite.com/jsonp/2694090/forms/201974231789995041/takel').catch(function(){});
+  function ok(){ f.hidden=true; done.hidden=false; }
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); err.textContent='';
+    var em=f.querySelector('input[type=email]'), c=f.querySelector('input[name=consent]');
+    if(!em.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){ err.textContent='pop your email in, love.'; em.focus(); return; }
+    if(!c.checked){ err.textContent='tick the box so i can email you.'; return; }
+    var b=f.querySelector('button'); b.disabled=true; b.textContent='adding you...';
+    var data=new FormData(f); data.delete('consent');
+    fetch(url,{method:'POST',body:data})
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if(j && j.success) ok(); else throw 0; })
+      .catch(function(){
+        fetch(url,{method:'POST',body:data,mode:'no-cors'}).then(ok).catch(function(){
+          b.disabled=false; b.textContent="i'm in"; err.textContent='something went wrong, please try again.';
+        });
+      });
+  });
+})();
+</script>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="images/logo-blush.png" alt="girl code" width="140" height="45">
+      <p>find your girls. 🍒</p>
+    </div>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/joingirlcode/" target="_blank" rel="noopener">@joingirlcode</a>
+      <a href="mailto:hello@joingirlcode.com">hello@joingirlcode.com</a>
+      <a href="waitlist.html">waitlist</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
