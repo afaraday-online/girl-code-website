@@ -138,10 +138,10 @@ td.yes { font-weight: 700; color: var(--cherry); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 .split > * { min-width: 0; }
 .prose p { margin: 0 0 18px; max-width: 60ch; }
-.photo { border: 3px solid var(--ink); border-radius: 28px; background: var(--rose); aspect-ratio: 4 / 5; overflow: hidden; display: grid; place-items: center; transform: rotate(-2deg); max-width: 100%; }
+.photo { position: relative; border: 3px solid var(--ink); border-radius: 28px; background: var(--rose); aspect-ratio: 4 / 5; overflow: hidden; display: grid; place-items: center; transform: rotate(-2deg); max-width: 100%; }
 .photo img { width: 100%; height: 100%; object-fit: cover; }
-.photo img.placeholder { width: 55%; height: auto; object-fit: contain; }
-.quote { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1.1; color: var(--cherry); border-left: 4px solid var(--cherry); padding-left: 20px; margin: 30px 0; }
+.photo img.placeholder { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 45%; height: auto; object-fit: contain; }
+.prose .quote, .quote { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1.1; color: var(--cherry); border-left: 4px solid var(--cherry); padding-left: 20px; margin: 48px 0 30px; }
 
 /* cta */
 .cta { text-align: center; }
