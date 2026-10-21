@@ -241,3 +241,16 @@ footer p { margin: 0; font-size: 15px; }
   .wl__card { padding: 40px 22px 28px; box-shadow: 6px 6px 0 var(--cherry); }
 }
 .wl .lede { max-width: 38ch; text-wrap: pretty; }
+
+/* events: phone readability */
+@media (max-width: 860px) {
+  .event { gap: 18px; padding: 28px 24px 26px; border-radius: 22px; }
+  .event + .event { margin-top: 22px; }
+  .event__when { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; font-size: 26px; padding-bottom: 16px; border-bottom: 2px solid var(--rose); }
+  .event__when small { margin-top: 0; font-size: 13px; color: var(--deep); }
+  .event__body { gap: 14px; }
+  .event__tags .tag { font-size: 11px; letter-spacing: 1.5px; padding: 6px 12px; }
+  .event__body h3 { font-size: 32px; line-height: 1; }
+  .event__body p { font-size: 16px; line-height: 1.65; color: #4a3434; }
+  .event .btn { align-self: flex-start; justify-self: start; width: auto; padding: 12px 22px; font-size: 15px; }
+}
