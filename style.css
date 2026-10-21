@@ -206,3 +206,7 @@ footer p { margin: 0; font-size: 15px; }
 .sticker--a { top: 0; left: 4%; background: var(--cherry); color: var(--blush); transform: rotate(-8deg); }
 .sticker--b { bottom: 6px; right: 2%; background: var(--rose); color: var(--ink); transform: rotate(6deg); }
 @media (max-width: 480px) { .phone { width: 296px; border-radius: 46px; } .sticker { font-size: 13px; } }
+
+.origin-quote { align-self: center; }
+.origin-quote .quote { font-size: 46px; margin: 0; padding-left: 28px; }
+@media (max-width: 800px) { .origin-quote .quote { font-size: 34px; margin-top: 16px; } }
