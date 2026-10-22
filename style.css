@@ -264,3 +264,42 @@ footer p { margin: 0; font-size: 15px; }
   .luma iframe { height: 820px; }
 }
 .luma--home iframe { height: 560px; }
+
+/* ===== spacing system (one rhythm for the whole site) ===== */
+:root { --space: 96px; --space-sm: 48px; }
+section { padding-block: var(--space); }
+section.follow { padding-top: 0; }
+.hero { padding-block: var(--space-sm) var(--space); }
+.hero.page-head { padding-block: var(--space-sm) var(--space-sm); }
+.page-head .lede { margin-top: 20px !important; }
+.page-head h1 { margin-top: 20px !important; }
+.follow .price, .follow .grid3 { margin-top: 0; }
+.band { padding-block: var(--space); }
+.band p { margin-top: 24px; }
+.cta p { margin-top: 20px; }
+.cta .btn-row { margin-top: 32px; }
+@media (max-width: 860px) {
+  :root { --space: 64px; --space-sm: 32px; }
+  .split { gap: 32px; }
+  .hero .wrap { gap: 48px; }
+}
+
+/* home: smaller phone */
+.phone { width: 280px; border-radius: 46px; padding: 10px; }
+.phone__screen { border-radius: 36px; }
+.msg { font-size: 14px; padding: 7px 12px; }
+.phone__msgs { gap: 8px; padding: 14px 14px; }
+@media (max-width: 480px) { .phone { width: 228px; border-radius: 40px; } .phone__screen { border-radius: 31px; } .msg { font-size: 13px; } }
+
+/* about: origins + quote */
+.origin-quote .quote { margin: 0; }
+@media (max-width: 800px) { .origin-quote .quote { margin: 0; font-size: 34px; } }
+
+/* about: founder photo */
+.founder { display: flex; flex-direction: column; gap: 28px; }
+.founder__title h2 { margin-top: 20px; }
+.founder__photo { width: 100%; max-width: 340px; height: auto; transform: rotate(-3deg); filter: drop-shadow(8px 10px 0 rgba(42,26,26,.35)); }
+@media (max-width: 860px) {
+  .founder { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }
+  .founder__photo { width: 44%; max-width: 200px; flex: none; }
+}
