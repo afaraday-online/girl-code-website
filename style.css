@@ -284,12 +284,9 @@ section.follow { padding-top: 0; }
   .hero .wrap { gap: 48px; }
 }
 
-/* home: smaller phone */
-.phone { width: 280px; border-radius: 46px; padding: 10px; }
-.phone__screen { border-radius: 36px; }
-.msg { font-size: 14px; padding: 7px 12px; }
-.phone__msgs { gap: 8px; padding: 14px 14px; }
-@media (max-width: 480px) { .phone { width: 228px; border-radius: 40px; } .phone__screen { border-radius: 31px; } .msg { font-size: 13px; } }
+/* home: smaller phone (scaled evenly, keeps its shape) */
+.phone { width: 355px; zoom: .83; }
+@media (max-width: 480px) { .phone { width: 355px; zoom: .8; } }
 
 /* about: origins + quote */
 .origin-quote .quote { margin: 0; }
@@ -303,3 +300,4 @@ section.follow { padding-top: 0; }
   .founder { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }
   .founder__photo { width: 44%; max-width: 200px; flex: none; }
 }
+@media (max-width: 480px) { .chat { padding-top: 34px; } .sticker--a { top: 0; left: 0; } }
