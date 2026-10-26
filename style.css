@@ -352,3 +352,5 @@ section.follow { padding-top: 0; }
   .rt-promo img { min-height: 0; height: 220px; border-radius: 25px 25px 0 0; }
   .rt-promo__txt { padding: 28px 24px 32px; }
 }
+.wc-steps .card h3 { font-size: 32px; }
+.rt-elements { margin: 20px 0 0; font-size: 19px; line-height: 1.55; max-width: 52ch; }
