@@ -354,3 +354,10 @@ section.follow { padding-top: 0; }
 }
 .wc-steps .card h3 { font-size: 32px; }
 .rt-elements { margin: 20px 0 0; font-size: 19px; line-height: 1.55; max-width: 52ch; }
+
+/* terms page */
+.tc > * { max-width: 760px; }
+.tc .tc-h { font-size: clamp(32px, 4vw, 44px); margin: 48px 0 16px; }
+.tc ul { padding-left: 22px; margin: 0 0 18px; }
+.tc li { margin-bottom: 10px; line-height: 1.6; }
+.tc p, .tc li { font-size: 17px; }
