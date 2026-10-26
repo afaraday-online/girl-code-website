@@ -301,3 +301,39 @@ section.follow { padding-top: 0; }
   .founder__photo { width: 44%; max-width: 200px; flex: none; }
 }
 @media (max-width: 480px) { .chat { padding-top: 34px; } .sticker--a { top: 0; left: 0; } }
+
+/* retreat page */
+.rt-spaces { position: static; background: var(--rose); color: var(--ink); transform: rotate(-4deg); align-self: center; }
+.rt-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 2px solid var(--ink); border-radius: 24px; background: var(--white); overflow: hidden; }
+.rt-facts > div { padding: 24px; border-left: 2px solid var(--rose); }
+.rt-facts > div:first-child { border-left: 0; }
+.rt-facts p { margin: 8px 0 0; font-size: 16px; line-height: 1.5; }
+.rt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
+.rt-link { font-weight: 700; color: var(--cherry); text-decoration: underline; margin-top: auto; }
+.rt-form { max-width: 560px; margin: 0 auto; }
+@media (max-width: 860px) {
+  .rt-facts { grid-template-columns: 1fr 1fr; }
+  .rt-facts > div:nth-child(3) { border-left: 0; }
+  .rt-facts > div:nth-child(n+3) { border-top: 2px solid var(--rose); }
+  .rt-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .rt-facts { grid-template-columns: 1fr; }
+  .rt-facts > div { border-left: 0; }
+  .rt-facts > div + div { border-top: 2px solid var(--rose); }
+}
+.follow .rt-grid { margin-top: 40px; }
+.rt-wide { margin: 32px 0 0; border: 3px solid var(--ink); border-radius: 28px; overflow: hidden; box-shadow: 8px 8px 0 var(--cherry); }
+.rt-wide img { display: block; width: 100%; height: 520px; object-fit: cover; }
+.rt-villa { align-items: center; }
+.rt-list { margin: 0 0 18px; padding-left: 20px; line-height: 1.7; }
+.rt-grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.rt-grid4 img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--ink); border-radius: 20px; display: block; }
+.rt-grid4 img:nth-child(1) { transform: rotate(-1.5deg); } .rt-grid4 img:nth-child(4) { transform: rotate(1.5deg); }
+.rt-polaroid { display: block; width: 100%; max-width: 360px; margin-top: 32px; border: 8px solid var(--white); border-bottom-width: 36px; border-radius: 6px; transform: rotate(-3deg); box-shadow: 0 16px 30px rgba(42,26,26,.3); }
+@media (max-width: 860px) {
+  .rt-wide img { height: 300px; }
+  .rt-wide { box-shadow: 5px 5px 0 var(--cherry); border-radius: 22px; }
+  .rt-polaroid { max-width: 260px; margin: 24px auto 0; }
+}
+.rt-strike { text-decoration: line-through; text-decoration-color: var(--rose); text-decoration-thickness: 5px; }
