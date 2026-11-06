@@ -1,12 +1,16 @@
-/* girl code — red on blush, serif headlines, lowercase voice, sticker-style buttons */
+/* girl code — sunset spritz: peach, aperol, cherry + pink, plum text, soft fraunces, wavy lines */
 :root {
-  --blush: #FCE6E9;
-  --rose: #EFC6CC;
-  --cherry: #BD0000;
-  --deep: #8E3A40;
-  --ink: #2A1A1A;
-  --white: #FFFFFF;
-  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --blush: #FBE9DF;   /* peach (background) */
+  --rose: #F6C6CF;    /* pink */
+  --cherry: #E8613C;  /* aperol (main accent) */
+  --red: #C62D2B;     /* cherry red */
+  --coral: #F08A7E;
+  --lilac: #C9B6D9;
+  --deep: #8A4A5E;
+  --ink: #4A2338;     /* plum (text) */
+  --white: #FFF8F3;
+  --soft: 0 14px 40px rgba(74, 35, 56, .10);
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
   --sans: 'DM Sans', Helvetica, Arial, sans-serif;
   --gutter: max(20px, env(safe-area-inset-left, 0px));
   --gutter-r: max(20px, env(safe-area-inset-right, 0px));
@@ -361,3 +365,54 @@ section.follow { padding-top: 0; }
 .tc ul { padding-left: 22px; margin: 0 0 18px; }
 .tc li { margin-bottom: 10px; line-height: 1.6; }
 .tc p, .tc li { font-size: 17px; }
+
+
+/* ================= sunset spritz refresh ================= */
+h1, h2, h3, .price__num, .event__when, .quote { font-family: var(--serif); font-weight: 600; font-variation-settings: 'SOFT' 100, 'WONK' 1; letter-spacing: -.02em; }
+h1 em, h2 em, h3 em, .quote { font-weight: 500; }
+em { font-variation-settings: 'SOFT' 100, 'WONK' 1; }
+
+/* soft, rounded, no hard outlines */
+.btn, .btn--small { border: 0; box-shadow: 0 8px 20px rgba(232, 97, 60, .28); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(232, 97, 60, .34); }
+.btn--light { background: var(--white); color: var(--cherry); box-shadow: var(--soft); }
+.card, .event, .table-wrap, .price__card, .luma, .wl__card, .rt-facts, .photo { border: 0 !important; box-shadow: var(--soft) !important; border-radius: 28px; }
+.price__card--hot { background: var(--red); color: var(--rose); box-shadow: 0 18px 40px rgba(198, 45, 43, .28) !important; }
+.price__card--hot em { color: var(--white); }
+.price__card--hot .btn--light { color: var(--red); }
+thead th { background: var(--ink); color: var(--white); }
+thead th.highlight { background: var(--red); }
+.tag { background: var(--ink); color: var(--white); }
+.tag--red { background: var(--red); color: var(--rose); }
+.tag--rose { background: var(--rose); color: var(--ink); }
+.rt-wide, .rt-grid4 img { border: 0 !important; box-shadow: var(--soft) !important; }
+.rt-promo { border: 0; background: var(--red); color: var(--rose); box-shadow: 0 18px 40px rgba(198, 45, 43, .25); }
+.rt-promo:hover { box-shadow: 0 22px 48px rgba(198, 45, 43, .32); }
+.rt-promo__txt em { color: var(--white); }
+.field input { border: 2px solid var(--rose); background: var(--white); }
+.field input:focus { border-color: var(--cherry); box-shadow: 0 0 0 4px rgba(232, 97, 60, .18); }
+
+/* the red + pink band, with wavy edges */
+.band { background: var(--red); color: var(--rose); position: relative; margin-block: 24px; }
+.band em { color: var(--white); }
+.band::before, .band::after { content: ''; position: absolute; left: 0; right: 0; height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='22' viewBox='0 0 80 22'%3E%3Cpath d='M0 22 V11 Q20 0 40 11 T80 11 V22Z' fill='%23C62D2B'/%3E%3C/svg%3E") repeat-x; background-size: 80px 22px; }
+.band::before { top: -21px; }
+.band::after { bottom: -21px; transform: scaleY(-1); }
+
+/* signature wavy line under page titles */
+.hero h1::after, .page-head h1::after { content: ''; display: block; width: 180px; height: 18px; margin-top: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='18' viewBox='0 0 60 18'%3E%3Cpath d='M0 9 Q15 0 30 9 T60 9' stroke='%23E8613C' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x; background-size: 60px 18px; }
+
+/* phone mock: softer */
+.phone { box-shadow: 0 30px 60px rgba(74, 35, 56, .22), inset 0 0 0 2px #5a3448 !important; }
+.msg { border: 0; box-shadow: 0 4px 12px rgba(74, 35, 56, .08); }
+.msg--me { background: var(--cherry); color: var(--white); }
+.msg b { color: var(--red); }
+.phone__top { border-bottom-color: var(--rose); }
+.sticker { border: 0; box-shadow: 0 8px 20px rgba(74, 35, 56, .15); }
+.sticker--a { background: var(--red); color: var(--rose); }
+.sticker--b { background: var(--lilac); color: var(--ink); }
+.bubble { border: 0; box-shadow: var(--soft); }
+.fan img { border: 0; }
+.nav__logo img, footer img { height: auto; }
